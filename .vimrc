@@ -30,15 +30,16 @@ set incsearch
 set scrolloff=8
 "Remaps
 let mapleader = " "
-nnoremap <leader>h : wincmd h<CR>
-nnoremap <leader>j : wincmd j<CR>
-nnoremap <leader>k : wincmd k<CR>
-nnoremap <leader>l : wincmd l<CR>
+nnoremap <C-h> : wincmd h<CR>
+nnoremap <C-j> : wincmd j<CR>
+nnoremap <C-k> : wincmd k<CR>
+nnoremap <C-l> : wincmd l<CR>
 nnoremap <silent> <leader>+ : vertical resize +5<CR>
 nnoremap <silent> <leader>- : vertical resize -5<CR>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>pv : wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>u : UndotreeShow<CR>
+nnoremap <leader>v : wincmd v<bar> :vertical resize 80<CR>
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
