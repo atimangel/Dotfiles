@@ -65,6 +65,8 @@ Plugin	'kien/ctrlp.vim'
 Plugin	'neoclide/coc.nvim', {'branch': 'release'}
 
 Plugin	'preservim/tagbar'
+
+Plugin	'rust-lang/rust.vim'
 call vundle#end()
 
 "colorscheme molokai
