@@ -54,13 +54,18 @@ Plugin	'pbondoer/vim-42header'
 Plugin 'jremmen/vim-ripgrep'
 "git
 Plugin 'tpope/vim-fugitive'
+Plugin	'vim-airline/vim-airline'
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gh :diffget //2<CR>
+nmap <leader>gs :G<CR>
+
 if has('nvim')
 	Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 endif
 "
 Plugin	'mbbill/undotree'
-Plugin	'vim-utils/vim-man'
 Plugin	'kien/ctrlp.vim'
+Plugin	'jez/vim-superman'
 
 Plugin	'neoclide/coc.nvim', {'branch': 'release'}
 
