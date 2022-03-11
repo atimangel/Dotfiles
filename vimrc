@@ -34,7 +34,7 @@ nnoremap <C-h> : wincmd h<CR>
 nnoremap <C-j> : wincmd j<CR>
 nnoremap <C-k> : wincmd k<CR>
 nnoremap <C-l> : wincmd l<CR>
-nnoremap <silent> <leader>+ : vertical resize +5<CR>
+nnoremap <silent> <leader>= : vertical resize +5<CR>
 nnoremap <silent> <leader>- : vertical resize -5<CR>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>pv : wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
@@ -48,9 +48,9 @@ if has('nvim')
 endif
 
 "set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/autoload
-set rtp+=~/.vim/plugin
-call plug#begin()
+set rtp+=~/Dotfiles/autoload
+set rtp+=~/Dotfiles/plugged
+call plug#begin("~/Dotfiles/plugged")
 "color
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
@@ -67,7 +67,9 @@ Plug 'tpope/vim-fugitive'
 "endif
 "
 Plug	'mbbill/undotree'
-Plug	'vim-utils/vim-man'
+if has ('vim')
+	Plug	'vim-utils/vim-man'
+endif
 Plug	'kien/ctrlp.vim'
 
 Plug	'neoclide/coc.nvim', {'branch': 'release'}
@@ -75,6 +77,8 @@ Plug	'neoclide/coc.nvim', {'branch': 'release'}
 Plug	'preservim/tagbar'
 "RUST
 Plug	'rust-lang/rust.vim'
+"MarkDown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
 "colorscheme molokai
@@ -102,7 +106,7 @@ endif
 
 set colorcolumn=80
 set	signcolumn=yes
-highlight Colorlolumn ctermbg=2 guibg=lightgrey
+highlight Colorcolumn ctermbg=2 guibg=lightgrey
 
 "if has('nvim')
 "lua <<EOF
