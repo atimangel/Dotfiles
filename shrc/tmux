@@ -1,0 +1,6 @@
+# Tmux
+if [[ -z $TMUX ]] && [[ $TERM_PROGRAM != "vscode" ]]
+then
+	tmux a -t base || tmux new -s base;
+fi
+

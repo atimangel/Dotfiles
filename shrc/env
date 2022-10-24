@@ -1,0 +1,6 @@
+export NAME=snpark
+export MAIL=snpark@student.42seoul.kr
+
+export LC_ALL=ko_KR.UTF-8
+export LANG=ko_KR.UTF-8
+

@@ -1,0 +1,15 @@
+alias vim=nvim
+alias nv=nvim
+alias vim.="vim ."
+alias v.="vim ."
+
+alias ls="exa"
+alias l="ls"
+alias ll="ls -al"
+alias lt="exa --tree"
+alias h="history"
+
+alias gb="git branch"
+alias dsp="docker system prune -af"
+alias dvp="docker volume prune -f"
+alias dub="docker-compose up --build"
