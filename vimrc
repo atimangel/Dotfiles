@@ -6,7 +6,7 @@ set tabstop=4
 set	autoindent
 set shiftwidth=4
 "linenumber
-set rnu
+"set rnu
 set nu
 
 set ruler
@@ -22,7 +22,7 @@ set encoding=utf-8
 set hidden
 
 set	nobackup
-set	undodir=~/.vim/undodir
+set	undodir=~/.config/nvim/undodir
 set	undofile
 
 set incsearch
@@ -34,52 +34,46 @@ nnoremap <C-h> : wincmd h<CR>
 nnoremap <C-j> : wincmd j<CR>
 nnoremap <C-k> : wincmd k<CR>
 nnoremap <C-l> : wincmd l<CR>
-nnoremap <silent> <leader>= : vertical resize +5<CR>
+nnoremap <silent> <leader>+ : vertical resize +5<CR>
 nnoremap <silent> <leader>- : vertical resize -5<CR>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>pv : wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>u : UndotreeShow<CR>
 nnoremap <leader>v : wincmd v<bar> :vertical resize 80<CR>
-if has('nvim')
-	tnoremap <C-h> : <C-\><C-n>wincmd h<CR>
-	tnoremap <C-j> : <C-\><C-n>wincmd j<CR>
-	tnoremap <C-k> : <C-\><C-n>wincmd k<CR>
-	tnoremap <C-l> : <C-\><C-n>wincmd l<CR>
-endif
 
-"set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/Dotfiles/autoload
-set rtp+=~/Dotfiles/plugged
-call plug#begin("~/Dotfiles/plugged")
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin()
 "color
-Plug 'tomasr/molokai'
-Plug 'morhetz/gruvbox'
+Plugin 'tomasr/molokai'
+Plugin 'morhetz/gruvbox'
 "directory
-Plug 'preservim/nerdtree'
+Plugin 'preservim/nerdtree'
 "42
-Plug	'pbondoer/vim-42header'
+Plugin	'pbondoer/vim-42header'
 "txt search in files
-Plug 'jremmen/vim-ripgrep'
+Plugin 'jremmen/vim-ripgrep'
 "git
-Plug 'tpope/vim-fugitive'
-"if has('nvim')
-"	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
-"endif
-"
-Plug	'mbbill/undotree'
-if has ('vim')
-	Plug	'vim-utils/vim-man'
-endif
-Plug	'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin	'vim-airline/vim-airline'
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gh :diffget //2<CR>
+nmap <leader>gs :G<CR>
 
-Plug	'neoclide/coc.nvim', {'branch': 'release'}
+Plugin	'mbbill/undotree'
+Plugin	'kien/ctrlp.vim'
+Plugin	'jez/vim-superman'
 
-Plug	'preservim/tagbar'
-"RUST
-Plug	'rust-lang/rust.vim'
-"MarkDown
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-call plug#end()
+Plugin	'neoclide/coc.nvim', {'branch': 'release'}
+
+Plugin	'preservim/tagbar'
+
+Plugin	'rust-lang/rust.vim'
+
+Plugin	'akinsho/toggleterm.nvim'
+
+Plugin 'rhysd/vim-clang-format'
+Plugin 'kana/vim-operator-user'
+call vundle#end()
 
 "colorscheme molokai
 colorscheme gruvbox
@@ -106,27 +100,7 @@ endif
 
 set colorcolumn=80
 set	signcolumn=yes
-highlight Colorcolumn ctermbg=2 guibg=lightgrey
-
-"if has('nvim')
-"lua <<EOF
-"require'nvim-treesitter.configs'.setup {
-"  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-"  ignore_install = { "javascript" }, -- List of parsers to ignore installing
-"  highlight = {
-"    enable = true,              -- false will disable the whole extension
-"    disable = {  },  -- list of language that will be disabled
-"    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-"    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-"    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-"    -- Instead of true it can also be a list of languages
-"    additional_vim_regex_highlighting = false,
-"  },
-"}
-"EOF
-"endif
-
-
+"highlight Colorcolumn ctermbg=2 guibg=lightgrey
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -137,3 +111,4 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+autocmd FileType c,cpp,javascript ClangFormatAutoEnable
