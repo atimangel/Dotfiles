@@ -42,7 +42,7 @@ nnoremap <leader>u : UndotreeShow<CR>
 nnoremap <leader>v : wincmd v<bar> :vertical resize 80<CR>
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.config/nvim/bundle/')
 "color
 Plugin 'tomasr/molokai'
 Plugin 'morhetz/gruvbox'
