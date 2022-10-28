@@ -13,3 +13,8 @@ alias gb="git branch"
 alias dsp="docker system prune -af"
 alias dvp="docker volume prune -f"
 alias dub="docker-compose up --build"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."

@@ -1,0 +1,26 @@
+function CCC()
+{
+    rm -rf ~$1 && mkdir -p /goinfre/snpark$1 && ln -s /goinfre/snpark$1 ~$1
+}   
+
+function CC()
+{
+    if ! [ -L ~$1 ]; then
+        rm -rf ~$1 && mkdir -p /goinfre/snpark$1 && ln -s /goinfre/snpark$1 ~$1
+        echo ~$1
+    fi
+}   
+
+CCC '/Library/Caches'
+CCC '/Library/Containers'
+CCC '/Library/ApplicationSupport/discord'
+CCC '/Library/ApplicationSupport/Google'
+CCC '/Library/ApplicationSupport/BraveSoftware'
+CCC '/.brew/Library/Taps/homebrew/homebrew-core/.git'
+CCC '/Library/ApplicationSupport/Code/Cache'
+CCC '/Library/ApplicationSupport/Code/CachedExtensionVSIXs'
+CCC '/Library/ApplicationSupport/Code/User/workspaceStorage'
+CCC '/Library/ApplicationSupport/Code/User/globalStorage'
+CCC '/Library/ApplicationSupport/Slack/Cache'
+CCC '/Library/ApplicationSupport/Slack/Code Cache'
+CCC '/Library/ApplicationSupport/Slack/Service Worker'
